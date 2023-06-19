@@ -1,5 +1,7 @@
 import Head from "next/head";
+
 import LoadingSection from "@/components/LoadingSection";
+import MainSection from "@/components/MainSection";
 
 export default function Home() {
   return (
@@ -11,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <LoadingSection />
+        <MainSection />
       </main>
     </>
   );
