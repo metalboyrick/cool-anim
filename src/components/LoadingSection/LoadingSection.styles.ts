@@ -25,17 +25,30 @@ export const progressText = css`
 `;
 
 export const powerUpText = css`
+  @keyframes blinkingText {
+    from {
+      opacity: 0.2;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
   font-weight: 400;
   line-height: 16px;
   margin-top: 16px;
+
+  animation-name: blinkingText;
+  animation-duration: 750ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 `;
 
 export const tipText = css`
   position: absolute;
   bottom: 3rem;
   font-size: 1rem;
-
-  z-index: 2;
 `;
 
 export const ballContainer = css`
