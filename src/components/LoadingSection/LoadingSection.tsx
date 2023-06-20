@@ -19,7 +19,9 @@ function LoadingSection({ onFinish }: LoadingSectionProps) {
       }
     };
 
-    incrementProgress(0.01);
+    setTimeout(() => {
+      incrementProgress(0.01);
+    }, 1000);
   }, []);
 
   return (
