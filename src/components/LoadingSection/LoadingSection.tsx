@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 
 import { DIRECTIONALS } from "./LoadingSection.constants";
 import * as sty from "./LoadingSection.styles";
+import { type LoadingSectionProps } from "./LoadingSection.types";
 
-function LoadingSection() {
+function LoadingSection({ onFinish }: LoadingSectionProps) {
   const [progress, setProgress] = useState(0.0);
 
   useEffect(() => {
@@ -13,10 +14,14 @@ function LoadingSection() {
           setProgress(newProgress);
           incrementProgress(newProgress + 0.01);
         }, 120);
+      } else {
+        onFinish();
       }
     };
 
-    incrementProgress(0.01);
+    setTimeout(() => {
+      incrementProgress(0.01);
+    }, 1000);
   }, []);
 
   return (

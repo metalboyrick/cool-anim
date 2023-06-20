@@ -49,6 +49,7 @@ export const tipText = css`
   position: absolute;
   bottom: 3rem;
   font-size: 1rem;
+  z-index: 1;
 `;
 
 export const ballContainer = css`
@@ -120,12 +121,13 @@ export const centralCircle = (progress: number) => {
       height: ${`${maxValue}px`};
       transform: scale(${progress * 1.2});
 
-      transition: transform 0.3s;
+      transition: transform 300ms;
     `;
   }
 
   return css`
     background-color: ${colors.blue.medium};
     border-radius: 9999px;
+    transform: scale(0);
   `;
 };
