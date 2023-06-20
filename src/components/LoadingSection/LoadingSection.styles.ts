@@ -49,6 +49,7 @@ export const tipText = css`
   position: absolute;
   bottom: 3rem;
   font-size: 1rem;
+  z-index: 1;
 `;
 
 export const ballContainer = css`

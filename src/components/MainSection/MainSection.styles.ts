@@ -2,6 +2,51 @@ import { css } from "@emotion/react";
 
 import { colors } from "@/config/theme";
 
+export const welcomeContainer = ({
+  isWelcoming,
+}: {
+  isWelcoming: boolean;
+}) => css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: ${colors.blue.medium};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+  clip-path: circle(100%);
+  > h1 {
+    @keyframes welcomeTextAppear {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    opacity: 0;
+
+    animation-name: welcomeTextAppear;
+    animation-duration: 500ms;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+  }
+
+  ${!isWelcoming &&
+  `
+    clip-path: circle(0%);
+  `}
+
+  transition: clip-path 200ms;
+`;
+
 export const container = css`
   width: 100vw;
   height: 100vh;
@@ -36,6 +81,8 @@ export const menuContainer = ({ isMenuOpen }: { isMenuOpen: boolean }) => css`
       transform: translateY(0);
     }
   }
+
+  opacity: 0;
 
   background-color: transparent;
   border: 1px solid transparent;
