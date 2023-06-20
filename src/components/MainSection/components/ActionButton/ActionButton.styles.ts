@@ -2,9 +2,16 @@ import { colors } from "@/config/theme";
 import { css } from "@emotion/react";
 
 export const container = css`
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+  }
+
   width: 180px;
   background-color: transparent;
   border: none;
+
+  transition: transform 300ms;
 `;
 
 export const border = css`
@@ -43,7 +50,7 @@ export const border = css`
     height: 400%;
     top: -150%;
     left: -150%;
-    z-index: -1;
+    z-index: 0;
   }
 
   padding: 1px;
@@ -51,8 +58,16 @@ export const border = css`
 `;
 
 export const inner = css`
+  &:hover {
+    background-color: ${colors.blue.dark};
+  }
+
+  position: relative;
   background-color: ${colors.blue.medium};
   padding: 1rem 0;
   border-radius: 0.5rem;
   font-weight: bold;
+  z-index: 2;
+
+  transition: background-color 300ms;
 `;
